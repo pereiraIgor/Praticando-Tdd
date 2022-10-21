@@ -23,6 +23,6 @@ public class Fatura {
     }
 
     public String getDataFatura() {
-        return "";
+        return this.dataFatura;
     }
 }
