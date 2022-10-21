@@ -31,9 +31,16 @@ public class FaturaTest {
     }
 
     @Test
-    public void testFaturaContemClienteAssociado() {
+    public void testClienteContemFatura() {
         Fatura f = new Fatura(4, 1000, "20/10/2022 00:00");
         Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
         assertEquals(4, c.getFaturaCodigo(4));
+    }
+
+    @Test
+    public void testClienteContemFaturaDiferente() {
+        Fatura f = new Fatura(7, 1000, "20/10/2022 00:00");
+        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
+        assertEquals(7, c.getFaturaCodigo(7));
     }
 }
