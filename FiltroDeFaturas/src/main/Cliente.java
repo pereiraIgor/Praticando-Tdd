@@ -16,4 +16,8 @@ public class Cliente {
     public String getDataInclusao() {
         return this.dataInclusao;
     }
+
+    public String getEstado() {
+        return null;
+    }
 }

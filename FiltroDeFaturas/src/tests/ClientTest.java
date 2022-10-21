@@ -35,4 +35,10 @@ public class ClientTest {
         Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00");
         assertEquals("14/04/2010 00:00", c.getDataInclusao());
     }
+
+    @Test
+    public void testClientePossuiEstado(){
+        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00");
+        assertEquals("PB", c.getEstado());
+    }
 }
