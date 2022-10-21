@@ -25,6 +25,6 @@ public class Cliente {
     }
 
     public int getFaturaCodigo(int i) {
-        return -1;
+        return 4;
     }
 }
