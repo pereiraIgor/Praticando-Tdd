@@ -4,8 +4,9 @@ public class Cliente {
     private String dataInclusao;
     private String nome;
 
-    public Cliente(String nome){
+    public Cliente(String nome, String dataInclusao){
         this.nome = nome;
+        this.dataInclusao = dataInclusao;
     }
 
     public String getNome() {
@@ -13,6 +14,6 @@ public class Cliente {
     }
 
     public String getDataInclusao() {
-        return "03/06/2018 00:00";
+        return this.dataInclusao;
     }
 }
