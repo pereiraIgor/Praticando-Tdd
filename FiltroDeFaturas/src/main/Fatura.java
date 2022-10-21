@@ -2,6 +2,7 @@ package main;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class Fatura {
     private String dataFatura;
@@ -24,5 +25,18 @@ public class Fatura {
 
     public String getDataFatura() {
         return this.dataFatura;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fatura fatura = (Fatura) o;
+        return codigo == fatura.codigo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
     }
 }
