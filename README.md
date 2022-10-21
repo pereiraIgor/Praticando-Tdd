@@ -1,5 +1,5 @@
 # TDD (Test-driven development)
-### O desenvolvimento orientado a testes ( TDD ) é um processo de desenvolvimento de software que depende de requisitos de software sendo convertidos em casos de teste antes que o software seja totalmente desenvolvido e rastreando todo o desenvolvimento de software testando repetidamente o software em todos os casos de teste. Isso é diferente de o software ser desenvolvido primeiro e os casos de teste criados posteriormente. [Mais Informações](https://en.wikipedia.org/wiki/Test-driven_development)
+- O desenvolvimento orientado a testes ( TDD ) é um processo de desenvolvimento de software que depende de requisitos de software sendo convertidos em casos de teste antes que o software seja totalmente desenvolvido e rastreando todo o desenvolvimento de software testando repetidamente o software em todos os casos de teste. Isso é diferente de o software ser desenvolvido primeiro e os casos de teste criados posteriormente. [Mais Informações](https://en.wikipedia.org/wiki/Test-driven_development)
 
 ## Verificação e Validação de Software
 
