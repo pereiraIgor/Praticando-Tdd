@@ -14,7 +14,19 @@ public class ClientTest {
 
     @Test
     public void testClientePossuiNome(){
-        Cliente c = new Cliente();
+        Cliente c = new Cliente("Cliente 1");
         assertEquals("Cliente 1", c.getNome());
+    }
+
+    @Test
+    public void testClientePossuiNomeDiferente(){
+        Cliente c = new Cliente("Cliente 2");
+        assertEquals("Cliente 2", c.getNome());
+    }
+
+    @Test
+    public void testClientePossuiDataInclusao(){
+        Cliente c = new Cliente("Cliente 2");
+        assertEquals("03/06/2018 00:00", c.getDataInclusao());
     }
 }
