@@ -23,4 +23,8 @@ public class Cliente {
     public String getEstado() {
         return this.estado;
     }
+
+    public int getFaturaCodigo(int i) {
+        return -1;
+    }
 }
