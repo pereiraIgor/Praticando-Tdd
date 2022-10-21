@@ -40,4 +40,8 @@ public class Cliente {
         }
         return false;
     }
+
+    public void adicionaFatura(Fatura f) {
+        this.listaFaturas.add(f);
+    }
 }

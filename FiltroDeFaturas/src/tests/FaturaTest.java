@@ -32,13 +32,17 @@ public class FaturaTest {
 
     @Test
     public void testClienteContemFatura() {
+        Fatura f = new Fatura(4, 1000, "20/10/2022 00:00");
         Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
-        assertTrue(c.checaSeTemFatura(3));
+        c.adicionaFatura(f);
+        assertTrue(c.checaSeTemFatura(4));
     }
 
     @Test
     public void testClienteContemFaturaDiferente() {
+        Fatura f = new Fatura(7, 1000, "20/10/2022 00:00");
         Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
-        assertTrue(c.checaSeTemFatura(4));
+        c.adicionaFatura(f);
+        assertTrue(c.checaSeTemFatura(7));
     }
 }
