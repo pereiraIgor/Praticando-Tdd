@@ -4,9 +4,12 @@ public class Cliente {
     private String dataInclusao;
     private String nome;
 
-    public Cliente(String nome, String dataInclusao){
+    private String estado;
+
+    public Cliente(String nome, String dataInclusao, String estado){
         this.nome = nome;
         this.dataInclusao = dataInclusao;
+        this.estado = estado;
     }
 
     public String getNome() {
@@ -18,6 +21,6 @@ public class Cliente {
     }
 
     public String getEstado() {
-        return null;
+        return this.estado;
     }
 }
