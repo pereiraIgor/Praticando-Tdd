@@ -21,5 +21,10 @@ public class FuncionarioTest {
       Funcionario func = new Funcionario("", "func.1@teste.com", 0, "");
       assertEquals("func.1@teste.com", func.getEmail());
    }
+   @Test
+   public void testFuncPossuiSalarioBase(){
+      Funcionario func = new Funcionario("funcionario1", "func.1@teste.com", 2000.0, "");
+      assertEquals(2000.0, func.getSalarioBase());
+   }
 
 }
