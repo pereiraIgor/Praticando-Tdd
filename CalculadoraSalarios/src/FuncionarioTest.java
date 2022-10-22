@@ -24,7 +24,6 @@ public class FuncionarioTest {
    @Test
    public void testFuncPossuiSalarioBase(){
       Funcionario func = new Funcionario("funcionario1", "func.1@teste.com", 2000.0, "");
-      assertEquals(2000.0, func.getSalarioBase());
+      assertEquals(2000, func.getSalarioBase(), 0);
    }
-
 }

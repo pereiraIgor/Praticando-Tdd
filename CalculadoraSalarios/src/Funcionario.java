@@ -1,12 +1,12 @@
 public class Funcionario {
     String nome;
     String email;
-    double salárioBase ;
+    double salarioBase ;
     String cargo;
-    public Funcionario(String nome, String email, double salárioBase ,String cargo){
+    public Funcionario(String nome, String email, double salarioBase ,String cargo){
         this.nome = nome;
         this.email = email;
-        this.salárioBase = salárioBase;
+        this.salarioBase = salarioBase;
         this.cargo = cargo;
     }
 
@@ -16,5 +16,9 @@ public class Funcionario {
 
     public String getEmail(){
         return this.email;
+    }
+
+    public double getSalarioBase(){
+        return this.salarioBase;
     }
 }
