@@ -30,7 +30,7 @@ public class FuncionarioTest {
    @Test
    public void testFuncPossuiCargo(){
       Funcionario func = new Funcionario("funcionario1", "func.1@teste.com", 2000.0, "DBA");
-      assertEquals("DBA", func.getCargo);
+      assertEquals("DBA", func.getCargo());
    }
 
 }
