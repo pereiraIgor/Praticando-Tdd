@@ -21,4 +21,7 @@ public class Funcionario {
     public double getSalarioBase(){
         return this.salarioBase;
     }
+    public String getCargo(){
+        return this.cargo;
+    }
 }
