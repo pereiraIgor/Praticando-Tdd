@@ -38,6 +38,6 @@ public class FaturaControllerTest {
         Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
         fc.adicionaFatura(c, new Fatura(1, 2500, "20/10/2022 00:00"));
         fc.filtraFaturas();
-        assertTrue(fc.getListaDeFaturas().get(c).getValorFatura() < 2000);
+        assertEquals(0, fc.getListaDeFaturas().size());
     }
 }

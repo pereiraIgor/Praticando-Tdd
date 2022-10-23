@@ -21,6 +21,9 @@ public class FaturaController {
     }
 
     public void filtraFaturas() {
+        for (Cliente c:this.faturas.keySet()) {
+            this.faturas.remove(c);
+        }
     }
 
     @Override
