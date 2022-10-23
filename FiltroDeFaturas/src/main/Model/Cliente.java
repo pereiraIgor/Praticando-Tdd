@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import main.Util.Utils;
+
 public class Cliente {
     private String dataInclusao;
     private String nome;
@@ -74,15 +76,15 @@ public class Cliente {
             if(f.getValorFatura() < 2000){
                 faturasParaRemover.add(f);
             }else if(f.getValorFatura() >= 2000 && f.getValorFatura() < 2500){
-                if(dataAtual.getYear() == dataFatura.getYear() && checaIntervaloData(dataAtual, dataFatura) <= 30){
+                if(Utils.estaoNoMesmoAno(dataAtual, dataFatura) && Utils.checaIntervaloData(dataAtual, dataFatura) <= 30){
                     faturasParaRemover.add(f);
                 }
             }else if(f.getValorFatura() >= 2500 && f.getValorFatura() < 3000){
-                if(dataAtual.getYear() == dataFatura.getYear() && checaIntervaloData(dataAtual, dataFatura) <= 60){
+                if(Utils.estaoNoMesmoAno(dataAtual, dataFatura) && Utils.checaIntervaloData(dataAtual, dataFatura) <= 60){
                     faturasParaRemover.add(f);
                 }
             }else if(f.getValorFatura() > 4000){
-                if(checaEstadoEhDoSul(this.estado)){
+                if(Utils.checaEstadoEhDoSul(this.estado)){
                     faturasParaRemover.add(f);
                 }
             }
@@ -96,17 +98,6 @@ public class Cliente {
                 this.removeFatura(f);
             }
         }
-    }
-
-    private int checaIntervaloData(LocalDate dataAtual, LocalDate dataFatura){
-        return dataAtual.getDayOfYear() - dataFatura.getDayOfYear();
-    }
-
-    private boolean checaEstadoEhDoSul(String estado){
-        if(estado.equals("RS") || estado.equals("SC") || estado.equals("PR")){
-            return true;
-        }
-        return false;
     }
 
 }
