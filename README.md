@@ -7,5 +7,6 @@
 - [Especificação da Atividade](https://docs.google.com/document/d/1Xc04sNt2q1HWb9h4LCdvHe8JkUy6PtGsOmNMoR3UoMk/edit#)
 - Com base na especificação da atividade os problemas propostos ficaram divididos da seguinte maneira:
     - Filtro de Faturas (Nícolas Moreira Nobre Leite)
+        - OBS: Considere o nome como identificador único do Cliente
     - Problema 2 (Igor de Sousa Pereira)
 
