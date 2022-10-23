@@ -6,9 +6,12 @@ import main.FaturaController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.text.ParseException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FaturaControllerTest {
+
 
     @Test
     public void testFaturaControllerSemFaturas(){
@@ -19,34 +22,34 @@ public class FaturaControllerTest {
     @Test
     public void testFaturaControllerFaturaAssociadaACliente(){
         FaturaController fc = new FaturaController();
-        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
-        fc.adicionaFatura(c, new Fatura(7, 1000, "20/10/2022 00:00"));
+        Cliente c = new Cliente("Cliente", "2010-04-14", "AM");
+        fc.adicionaFatura(c, new Fatura(7, 1000, "2022-10-20"));
         assertEquals(1, fc.getListaDeFaturas().size());
     }
 
     @Test
     public void testFaturaEstaAssociadaACliente(){
         FaturaController fc = new FaturaController();
-        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
-        fc.adicionaFatura(c, new Fatura(1, 1000, "20/10/2022 00:00"));
+        Cliente c = new Cliente("Cliente", "2010-04-14", "AM");
+        fc.adicionaFatura(c, new Fatura(1, 1000, "2022-10-20"));
         assertTrue(c.checaSeTemFatura(1));
     }
 
     @Test
-    public void testFaturaControllerFiltroFaturasMenor2000(){
+    public void testFaturaControllerFiltroFaturasMenor2000() throws ParseException {
         FaturaController fc = new FaturaController();
-        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
-        fc.adicionaFatura(c, new Fatura(1, 2500, "20/10/2022 00:00"));
+        Cliente c = new Cliente("Cliente", "2010-04-14", "AM");
+        fc.adicionaFatura(c, new Fatura(1, 1900, "2022-10-20"));
         fc.filtraFaturas();
         assertEquals(0, fc.getListaDeFaturas().size());
     }
 
     @Test
-    public void testFaturaControllerFiltroFaturas2000_2500(){
+    public void testFaturaControllerFiltroFaturas2000_2500() throws ParseException {
         FaturaController fc = new FaturaController();
-        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
-        Fatura f1 = new Fatura(1, 2500, "15/10/2022 00:00");
-        Fatura f2 = new Fatura(1, 2200, "15/03/2022 00:00");
+        Cliente c = new Cliente("Cliente", "2010-04-14", "AM");
+        Fatura f1 = new Fatura(1, 2500, "2022-10-15");
+        Fatura f2 = new Fatura(1, 2200, "2022-03-15");
         fc.adicionaFatura(c, f1);
         fc.adicionaFatura(c, f2);
         fc.filtraFaturas();

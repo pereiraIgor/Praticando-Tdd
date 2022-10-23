@@ -4,9 +4,6 @@ import main.Cliente;
 import main.Fatura;
 import org.junit.jupiter.api.Test;
 
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class FaturaTest {
@@ -26,22 +23,22 @@ public class FaturaTest {
 
     @Test
     public void testFaturaContemData() {
-        Fatura f = new Fatura(3, 1000, "20/10/2022 00:00");
-        assertEquals("20/10/2022 00:00", f.getDataFatura());
+        Fatura f = new Fatura(3, 1000, "2022-10-20");
+        assertEquals("2022-10-20", f.getDataFatura());
     }
 
     @Test
     public void testClienteContemFatura() {
-        Fatura f = new Fatura(4, 1000, "20/10/2022 00:00");
-        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
+        Fatura f = new Fatura(4, 1000, "2022-10-20");
+        Cliente c = new Cliente("Cliente 4", "2010-04-14", "AM");
         c.adicionaFatura(f);
         assertTrue(c.checaSeTemFatura(4));
     }
 
     @Test
     public void testClienteContemFaturaDiferente() {
-        Fatura f = new Fatura(7, 1000, "20/10/2022 00:00");
-        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
+        Fatura f = new Fatura(7, 1000, "2022-10-20");
+        Cliente c = new Cliente("Cliente 4", "2010-04-14", "AM");
         c.adicionaFatura(f);
         assertTrue(c.checaSeTemFatura(7));
     }

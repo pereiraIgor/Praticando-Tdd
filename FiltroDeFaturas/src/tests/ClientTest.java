@@ -1,12 +1,9 @@
 package tests;
 
 import main.Cliente;
-import main.Fatura;
+
 import org.junit.jupiter.api.Test;
 
-import java.text.DateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,25 +23,25 @@ public class ClientTest {
 
     @Test
     public void testClientePossuiDataInclusao(){
-        Cliente c = new Cliente("Cliente 3", "03/06/2018 00:00", "");
-        assertEquals("03/06/2018 00:00", c.getDataInclusao());
+        Cliente c = new Cliente("Cliente 3", "2018-03-06", "");
+        assertEquals("2018-03-06", c.getDataInclusao());
     }
 
     @Test
     public void testClientePossuiDataDiferente(){
-        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "");
-        assertEquals("14/04/2010 00:00", c.getDataInclusao());
+        Cliente c = new Cliente("Cliente 4", "2010-04-14", "");
+        assertEquals("2010-04-14", c.getDataInclusao());
     }
 
     @Test
     public void testClientePossuiEstado(){
-        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "PB");
+        Cliente c = new Cliente("Cliente 4", "2010-04-14", "PB");
         assertEquals("PB", c.getEstado());
     }
 
     @Test
     public void testClientePossuiEstadoDiferente(){
-        Cliente c = new Cliente("Cliente 4", "14/04/2010 00:00", "AM");
+        Cliente c = new Cliente("Cliente 4", "2010-04-14", "AM");
         assertEquals("AM", c.getEstado());
     }
 }
