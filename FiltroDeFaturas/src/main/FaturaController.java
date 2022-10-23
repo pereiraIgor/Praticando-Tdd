@@ -50,6 +50,7 @@ public class FaturaController {
         for (Cliente c:this.faturas.keySet()) {
             Fatura f = this.faturas.get(c);
             if(faturasParaRemover.contains(f)){
+                c.removeFatura(f);
                 this.faturas.remove(c,f);
             }
         }

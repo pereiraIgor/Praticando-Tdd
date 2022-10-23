@@ -16,8 +16,6 @@ public class Cliente {
         this.dataInclusao = dataInclusao;
         this.estado = estado;
         this.listaFaturas = new ArrayList<>();
-        listaFaturas.add(new Fatura(3, 1000, "20/10/2022 00:00"));
-        listaFaturas.add(new Fatura(4, 1000, "20/10/2022 00:00"));
     }
 
     public String getNome() {
@@ -46,6 +44,9 @@ public class Cliente {
         this.listaFaturas.add(f);
     }
 
+    public void removeFatura(Fatura f) {
+        this.listaFaturas.remove(f);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
