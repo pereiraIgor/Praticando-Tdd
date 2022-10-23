@@ -31,4 +31,13 @@ public class FaturaControllerTest {
         fc.adicionaFatura(c, new Fatura(1, 1000, "20/10/2022 00:00"));
         assertTrue(c.checaSeTemFatura(1));
     }
+
+    @Test
+    public void testFaturaControllerFiltroFaturasMenor2000(){
+        FaturaController fc = new FaturaController();
+        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
+        fc.adicionaFatura(c, new Fatura(1, 2500, "20/10/2022 00:00"));
+        fc.filtraFaturas();
+        assertTrue(fc.getListaDeFaturas().get(c).getValorFatura() < 2000);
+    }
 }

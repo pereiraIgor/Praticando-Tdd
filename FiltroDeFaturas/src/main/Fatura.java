@@ -27,6 +27,15 @@ public class Fatura {
         return this.dataFatura;
     }
 
+
+    @Override
+    public String toString() {
+        return "Fatura" + System.lineSeparator() +
+                "Codigo: " + codigo + System.lineSeparator() +
+                "Data da Fatura: " + dataFatura + System.lineSeparator() +
+                "Valor da Fatura: " + valor + System.lineSeparator();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

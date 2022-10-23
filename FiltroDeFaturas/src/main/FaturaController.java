@@ -4,19 +4,32 @@ import java.util.*;
 
 public class FaturaController {
 
-    private Map<String, Fatura> faturas;
+    private Map<Cliente, Fatura> faturas;
 
     public FaturaController() {
         this.faturas = new HashMap<>();
     }
 
-    public Map<String, Fatura> getListaDeFaturas() {
+    public Map<Cliente, Fatura> getListaDeFaturas() {
         return this.faturas;
     }
 
     public void adicionaFatura(Cliente cliente,Fatura fatura) {
         cliente.adicionaFatura(fatura);
-        this.faturas.put(cliente.getNome(), fatura);
+        this.faturas.put(cliente, fatura);
 
+    }
+
+    public void filtraFaturas() {
+    }
+
+    @Override
+    public String toString() {
+        String res = "Faturas" + System.lineSeparator() + "/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/" + System.lineSeparator();
+        for (Fatura f: this.faturas.values()) {
+            res += f.toString() + System.lineSeparator();
+            res += "/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/";
+        }
+        return res;
     }
 }
