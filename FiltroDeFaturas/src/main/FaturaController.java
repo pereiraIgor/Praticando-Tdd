@@ -11,6 +11,6 @@ public class FaturaController {
     }
 
     public List<Fatura> getListaDeFaturas() {
-        return null;
+        return new ArrayList<>();
     }
 }
