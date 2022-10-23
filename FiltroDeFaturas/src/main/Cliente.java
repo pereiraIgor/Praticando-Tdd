@@ -1,5 +1,6 @@
 package main;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,10 @@ public class Cliente {
 
     public String getEstado() {
         return this.estado;
+    }
+
+    public List<Fatura> getListaFaturas() {
+        return listaFaturas;
     }
 
     public boolean checaSeTemFatura(int codigo) {
@@ -59,4 +64,38 @@ public class Cliente {
     public int hashCode() {
         return Objects.hash(nome);
     }
+
+    public void filtraFaturas() {
+        LocalDate dataAtual = LocalDate.now();
+        List<Fatura> faturasParaRemover = new ArrayList<>();
+        for (Fatura f: this.listaFaturas){
+
+            LocalDate dataFatura = LocalDate.parse(f.getDataFatura());
+            if(f.getValorFatura() < 2000){
+                faturasParaRemover.add(f);
+            }else if(f.getValorFatura() >= 2000 && f.getValorFatura() < 2500){
+                if(dataAtual.getYear() == dataFatura.getYear() && checaIntervaloData(dataAtual, dataFatura) <= 30){
+                    faturasParaRemover.add(f);
+                }
+            }else if(f.getValorFatura() >= 2500 && f.getValorFatura() < 3000){
+                if(dataAtual.getYear() == dataFatura.getYear() && checaIntervaloData(dataAtual, dataFatura) <= 60){
+                    faturasParaRemover.add(f);
+                }
+            }
+        }
+        this.removeFaturas(faturasParaRemover);
+    }
+
+    private void removeFaturas(List<Fatura> faturasParaRemover){
+        for (Fatura f: faturasParaRemover){
+            if (this.listaFaturas.contains(f)){
+                this.removeFatura(f);
+            }
+        }
+    }
+
+    private int checaIntervaloData(LocalDate dataAtual, LocalDate dataFatura){
+        return dataAtual.getDayOfYear() - dataFatura.getDayOfYear();
+    }
+
 }
