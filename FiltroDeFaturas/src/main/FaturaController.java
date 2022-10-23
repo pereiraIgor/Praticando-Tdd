@@ -6,14 +6,17 @@ import java.util.List;
 
 public class FaturaController {
 
-    public FaturaController() {
+    private List<Fatura> listaFaturas;
 
+    public FaturaController() {
+        this.listaFaturas = new ArrayList<>();
     }
 
     public List<Fatura> getListaDeFaturas() {
-        return new ArrayList<>();
+        return this.listaFaturas;
     }
 
     public void adicionaFatura(Fatura fatura) {
+        this.listaFaturas.add(fatura);
     }
 }
