@@ -35,4 +35,14 @@ public class FaturaController {
         }
         return res;
     }
+
+    public Fatura getFatura(Fatura fatura) {
+        for (Fatura f:this.faturas.values()) {
+            if(f.getCodigo() == fatura.getCodigo()){
+                return f;
+            }
+
+        }
+        return null;
+    }
 }

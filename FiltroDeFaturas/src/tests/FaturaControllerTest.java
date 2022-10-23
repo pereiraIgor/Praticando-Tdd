@@ -40,4 +40,17 @@ public class FaturaControllerTest {
         fc.filtraFaturas();
         assertEquals(0, fc.getListaDeFaturas().size());
     }
+
+    @Test
+    public void testFaturaControllerFiltroFaturas2000_2500(){
+        FaturaController fc = new FaturaController();
+        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
+        Fatura f1 = new Fatura(1, 2500, "15/10/2022 00:00");
+        Fatura f2 = new Fatura(1, 2200, "15/03/2022 00:00");
+        fc.adicionaFatura(c, f1);
+        fc.adicionaFatura(c, f2);
+        fc.filtraFaturas();
+        assertEquals(1, fc.getListaDeFaturas().size());
+        assertEquals(f2, fc.getFatura(f2));
+    }
 }
