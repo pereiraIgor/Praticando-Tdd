@@ -7,5 +7,10 @@
 - [Especificação da Atividade](https://docs.google.com/document/d/1Xc04sNt2q1HWb9h4LCdvHe8JkUy6PtGsOmNMoR3UoMk/edit#)
 - Com base na especificação da atividade os problemas propostos ficaram divididos da seguinte maneira:
     - Filtro de Faturas (Nícolas Moreira Nobre Leite)
+        - OBS: Considere o nome como identificador único do Cliente
     - Problema 2 (Igor de Sousa Pereira)
+
+## Experiência com TDD
+- Nícolas
+    - Pode-se dizer que TDD é uma das formas mais eficientes de programação para quem está acostumado a programar dessa maneira. Por conta de vícios de programação, bem como outros costumes, posso dizer que não gostei da experiência, me atrasando bastante em algumas funcionalidades simples para poder se adaptar a essa técnica. Uma vez que é importante a realização de passos extremamente pequenos na codificação de algumas funcionalidades, coisas óbvias que poderiam ser resolvidas rapidamente acabam tomando mais tempo. Entretanto, é importante ressaltar que essa prática lhe dá muita confiança de que seu código "funciona" para casos básicos de teste, visto que os codificamos primeiro, evitando que você fique re-visitando seu código para casos que já funcionam. Sendo assim, a experiência no geral não foi agradável, mas creio que se trata muito mais de hábito costume, do que necessariamente não "gostar" desse tipo de desenvolvimento.
 
