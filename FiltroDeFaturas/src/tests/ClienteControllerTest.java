@@ -1,8 +1,8 @@
 package tests;
 
-import main.Cliente;
-import main.Fatura;
-import main.ClienteController;
+import main.Model.Cliente;
+import main.Model.Fatura;
+import main.Controller.ClienteController;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;

@@ -1,8 +1,8 @@
-package main;
+package main.Controller;
 
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import main.Model.Cliente;
+import main.Model.Fatura;
+
 import java.util.*;
 
 public class ClienteController {
@@ -18,7 +18,7 @@ public class ClienteController {
         return this.clientes;
     }
 
-    public void adicionaFatura(Cliente cliente,Fatura fatura) {
+    public void adicionaFatura(Cliente cliente, Fatura fatura) {
         this.clientes.put(cliente.getNome(), cliente);
         cliente.adicionaFatura(fatura);
     }

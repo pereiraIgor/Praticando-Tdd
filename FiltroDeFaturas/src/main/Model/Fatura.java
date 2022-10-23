@@ -1,7 +1,5 @@
-package main;
+package main.Model;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Objects;
 
 public class Fatura {

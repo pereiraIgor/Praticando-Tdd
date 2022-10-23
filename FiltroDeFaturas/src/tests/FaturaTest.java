@@ -1,7 +1,7 @@
 package tests;
 
-import main.Cliente;
-import main.Fatura;
+import main.Model.Cliente;
+import main.Model.Fatura;
 import org.junit.jupiter.api.Test;
 
 

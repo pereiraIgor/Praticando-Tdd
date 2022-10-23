@@ -1,6 +1,6 @@
 package tests;
 
-import main.Cliente;
+import main.Model.Cliente;
 
 import org.junit.jupiter.api.Test;
 
