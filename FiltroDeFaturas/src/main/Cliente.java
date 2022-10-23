@@ -81,6 +81,10 @@ public class Cliente {
                 if(dataAtual.getYear() == dataFatura.getYear() && checaIntervaloData(dataAtual, dataFatura) <= 60){
                     faturasParaRemover.add(f);
                 }
+            }else if(f.getValorFatura() > 4000){
+                if(checaEstadoEhDoSul(this.estado)){
+                    faturasParaRemover.add(f);
+                }
             }
         }
         this.removeFaturas(faturasParaRemover);
@@ -96,6 +100,13 @@ public class Cliente {
 
     private int checaIntervaloData(LocalDate dataAtual, LocalDate dataFatura){
         return dataAtual.getDayOfYear() - dataFatura.getDayOfYear();
+    }
+
+    private boolean checaEstadoEhDoSul(String estado){
+        if(estado.equals("RS") || estado.equals("SC") || estado.equals("PR")){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -80,4 +80,18 @@ public class ClienteControllerTest {
         assertFalse(cc.getCliente(c.getNome()).checaSeTemFatura(f1.getCodigo()));
         assertFalse(cc.getCliente(c.getNome()).checaSeTemFatura(f2.getCodigo()));
     }
+
+    @Test
+    public void testClienteControllerFiltroFaturasMais4000() throws ParseException {
+        ClienteController cc = new ClienteController();
+        Cliente c = new Cliente("Cliente 5", "2010-04-14", "RS");
+        Fatura f1 = new Fatura(6, 4500, "2022-10-15");
+        Fatura f2 = new Fatura(7, 3500, "2022-09-10");
+        cc.adicionaFatura(c, f1);
+        cc.adicionaFatura(c, f2);
+        cc.filtraFaturas();
+        assertEquals(1, cc.getListaDeFaturas().size());
+        assertFalse(cc.getCliente(c.getNome()).checaSeTemFatura(f1.getCodigo()));
+        assertTrue(cc.getCliente(c.getNome()).checaSeTemFatura(f2.getCodigo()));
+    }
 }
