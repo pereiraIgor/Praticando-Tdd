@@ -13,4 +13,7 @@ public class FaturaController {
     public List<Fatura> getListaDeFaturas() {
         return new ArrayList<>();
     }
+
+    public void adicionaFatura(Fatura fatura) {
+    }
 }
