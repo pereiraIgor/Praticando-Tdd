@@ -17,9 +17,10 @@ public class FaturaControllerTest {
     }
 
     @Test
-    public void testFiltraFaturaController(){
+    public void testFaturaControllerFaturaAssociadaACliente(){
         FaturaController fc = new FaturaController();
-        fc.adicionaFatura(new Fatura(7, 1000, "20/10/2022 00:00"));
+        Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
+        fc.adicionaFatura(c, new Fatura(7, 1000, "20/10/2022 00:00"));
         assertEquals(1, fc.getListaDeFaturas().size());
     }
 
@@ -27,7 +28,7 @@ public class FaturaControllerTest {
     public void testFaturaEstaAssociadaACliente(){
         FaturaController fc = new FaturaController();
         Cliente c = new Cliente("Cliente", "14/04/2010 00:00", "AM");
-        fc.adicionaFatura(new Fatura(1, 1000, "20/10/2022 00:00"));
+        fc.adicionaFatura(c, new Fatura(1, 1000, "20/10/2022 00:00"));
         assertTrue(c.checaSeTemFatura(1));
     }
 }

@@ -1,22 +1,22 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class FaturaController {
 
-    private List<Fatura> listaFaturas;
+    private Map<String, Fatura> faturas;
 
     public FaturaController() {
-        this.listaFaturas = new ArrayList<>();
+        this.faturas = new HashMap<>();
     }
 
-    public List<Fatura> getListaDeFaturas() {
-        return this.listaFaturas;
+    public Map<String, Fatura> getListaDeFaturas() {
+        return this.faturas;
     }
 
-    public void adicionaFatura(Fatura fatura) {
-        this.listaFaturas.add(fatura);
+    public void adicionaFatura(Cliente cliente,Fatura fatura) {
+        cliente.adicionaFatura(fatura);
+        this.faturas.put(cliente.getNome(), fatura);
+
     }
 }
