@@ -51,4 +51,5 @@ public class CalculadoraTest {
         Calculadora calc = new Calculadora();
         assertEquals(0, calc.getSalarioCalculado(func), .5);
     }
+    
 }

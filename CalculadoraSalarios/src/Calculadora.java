@@ -10,6 +10,11 @@ public class Calculadora {
                 return funcionario.getSalarioBase() * (0.75);
             }
             return funcionario.getSalarioBase() * (0.85);
+        }else if(funcionario.getCargo()=="GERENTE"){
+            if(funcionario.getSalarioBase() >= 5000){
+                return funcionario.getSalarioBase() * (0.75);
+            }
+            return funcionario.getSalarioBase() * (0.80);
         }
         return funcionario.getSalarioBase();
     }
