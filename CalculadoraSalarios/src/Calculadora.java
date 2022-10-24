@@ -1,6 +1,5 @@
 public class Calculadora {
-    
-    public Calculadora(Funcionario func){
+    public double getSalarioCalculado(Funcionario funcionario){
         
     }
 }
