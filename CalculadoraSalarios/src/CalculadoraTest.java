@@ -45,4 +45,10 @@ public class CalculadoraTest {
         Calculadora calc = new Calculadora();
         assertEquals(1699, calc.getSalarioCalculado(func), .5);
     }
+    @Test
+    public void criarCalculadoraGerente(){
+        Funcionario func = new Funcionario("Func1", "func.teste@teste", 0, "GERENTE");
+        Calculadora calc = new Calculadora();
+        assertEquals(0, calc.getSalarioCalculado(func), .5);
+    }
 }
