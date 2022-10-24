@@ -13,6 +13,6 @@ public class CalculadoraTest {
     public void criarCalculadoraDev(){
         Funcionario func = new Funcionario("Func1", "func.teste@teste", 2999, "DESENVOLVEDOR");
         Calculadora calc = new Calculadora();
-        assertEquals(2399.2, calc.getSalarioCalculado(func), 0);
+        assertEquals(2699.1, calc.getSalarioCalculado(func), 0);
     }
 }
