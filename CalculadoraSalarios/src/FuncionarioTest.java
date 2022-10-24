@@ -46,9 +46,5 @@ public class FuncionarioTest {
       Funcionario func2 = new Funcionario("funcionario1", "func.1@teste.com", 2000.0, "DESENVOLVEDOR");
       assertEquals("DESENVOLVEDOR", func2.getCargo());
    }
-   @Test
-   public void testDevSalarioLiquido(){
-      Funcionario dev = new Funcionario("Funcionario 1", "func.1@teste", 3500, "DESENVOLVEDOR");
-      assertEquals(2800, dev.getSalarioLiquido(), 0);
-   }
+   
 }
