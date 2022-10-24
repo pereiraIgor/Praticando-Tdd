@@ -25,6 +25,6 @@ public class CalculadoraTest {
     public void criarCalculadoraDda(){
         Funcionario func = new Funcionario("Func1", "func.teste@teste", 3000, "DBA");
         Calculadora calc = new Calculadora();
-        assertEquals(3000, calc.getSalarioCalculado(func), 0);
+        assertEquals(2250, calc.getSalarioCalculado(func), 0);
     }
 }
