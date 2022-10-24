@@ -5,7 +5,7 @@ public class Calculadora {
                 return funcionario.getSalarioBase() * (.8);
             }
             return funcionario.getSalarioBase() * (.9);
-        }else if(funcionario.getCargo() == "DBA"){
+        }else if(funcionario.getCargo() == "DBA" || funcionario.getCargo() == "TESTADOR"){
             if(funcionario.getSalarioBase() >= 2000){
                 return funcionario.getSalarioBase() * (0.75);
             }
