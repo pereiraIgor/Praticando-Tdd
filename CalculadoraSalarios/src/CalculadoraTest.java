@@ -35,8 +35,14 @@ public class CalculadoraTest {
     }
     @Test
     public void criarCalculadoraTeste(){
+        Funcionario func = new Funcionario("Func1", "func.teste@teste", 0, "TESTADOR");
+        Calculadora calc = new Calculadora();
+        assertEquals(0, calc.getSalarioCalculado(func), .5);
+    }
+    @Test
+    public void criarCalculadoraTeste2(){
         Funcionario func = new Funcionario("Func1", "func.teste@teste", 1999, "TESTADOR");
         Calculadora calc = new Calculadora();
-        assertEquals(1999, calc.getSalarioCalculado(func), .5);
+        assertEquals(1699, calc.getSalarioCalculado(func), .5);
     }
 }
